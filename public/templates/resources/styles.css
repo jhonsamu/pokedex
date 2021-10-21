@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0px;
+  font-size: 1.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("./images/background.png");
+  background-size: cover;
+  background-position: center center;
+}
+
+.background {
+  position: absolute;
+}
+
+/* Layout */
+.pokedex-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 100%;
+  grid-template-rows: 5rem 1fr 5rem;
+
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+header {
+  grid-area: header;
+  background: #2e84a6;
+  border-radius: 10px 10px 0 0;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+main {
+  grid-area: main;
+  padding: 1rem;
+  margin: auto;
+}
+
+header a {
+  color: #f2f2f2;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pokedex-logo img {
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+}
+
+.img-background {
+  z-index: -1;
+}
+
+.row-center {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  margin: auto;
+  background: transparent;
+  border-radius: 10px;
+}
+
+.poke-name {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 10px;
+  left: 0px;
+}
+
+.poke-name img {
+  width: 20px;
+  height: 20px;
+}
+
+.poke-name span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.pokemon-sprite {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.pokemon-sprite img {
+  width: 287px;
+  height: 258px;
+  z-index: 999;
+}
+
+.data-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  width: 220px;
+  background-color: #f5f4fa;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px 0 20px 0;
+}
+.data-info div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.data-info div span {
+  padding: 5px;
+  font-weight: bold;
+}
+
+.data-value span {
+  padding: 5px;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #f5f4fa;
+  width: 100%;
+}
+
+.footer-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.other-pokemons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  padding: 10px;
+  margin: auto;
+}
+
+.card1 {
+  width: 60px;
+  height: 60px;
+  background-color: #ebebf6;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px 5px 0;
+}
+
+.card1:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.card-link img {
+  width: 42px;
+  height: 42px;
+}
+
+.card1 img {
+  width: 42px;
+  height: 42px;
+}
+
+@media (min-width: 320px) and (max-width: 699px) {
+  main{
+    margin: 0 auto;
+  }
+  header {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    width: 240px;
+    height: 40px;
+  }
+
+  .pokemon-sprite img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .data-info {
+    position: relative;
+    height: auto;
+    margin: auto;
+    top: 110px;
+    font-size: 14px;
+  }
+  .data-text {
+    margin: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 10px;
+    color: #a6a6a6;
+  }
+
+  footer {
+    height: 160px;
+  }
+
+  .other-pokemons {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 30px 0 30px;
+  }
+
+  .footer-title {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 700px) {
+  header {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .row-center {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .card {
+    height: 40px;
+    margin: 0 auto;
+  }
+
+  .pokemon-sprite img {
+    width: 300px;
+    height: 340px;
+  }
+
+  .data-info {
+    width: 240px;
+    height: 300px;
+    border-radius: 10px;
+    position: initial;
+    column-gap: 20px;
+    font-size: 1rem;
+  }
+
+  .data-text {
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 10px;
+    color: #a6a6a6;
+  }
+
+  footer {
+    height: 82px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .other-pokemons {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .footer-title {
+    font-size: 1rem;
+    margin: auto;
+  }
+}
+
+@media (min-width: 900px) {
+  header {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .card {
+    /* width: 240px; */
+    height: 40px;
+    margin: 0 auto;
+  }
+
+  .pokemon-sprite img {
+    width: 300px;
+    height: 340px;
+  }
+
+  footer {
+    height: 82px;
+  }
+
+  .other-pokemons {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
